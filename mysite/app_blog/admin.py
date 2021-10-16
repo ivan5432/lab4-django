@@ -2,11 +2,19 @@ from django.contrib import admin
 from django.shortcuts import get_object_or_404
 from .models import Article, ArticleImage, Category
 from .forms import ArticleImageForm
+
+from django.template.defaultfilters import slugify
 class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('category','slug')
     list_display = ('category',)
+    prepopulated_fields = {'slug': ('category',)}
     fieldsets = (
     ('', {
     'fields': ('category', ),
+    }),
+    ((u'Додатково'), {
+    'classes': ('grp-collapse grp-closed',),
+    'fields': ('slug',),
     }),
     )
 admin.site.register(Category, CategoryAdmin)
