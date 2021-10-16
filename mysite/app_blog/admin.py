@@ -6,7 +6,6 @@ from .forms import ArticleImageForm
 from django.template.defaultfilters import slugify
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('category','slug')
-    list_display = ('category',)
     prepopulated_fields = {'slug': ('category',)}
     fieldsets = (
     ('', {
