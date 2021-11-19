@@ -37,11 +37,11 @@ class ArticleAdmin(admin.ModelAdmin):
     fieldsets = (
     ('', {
     'fields': ('pub_date', 'title', 'description',
-    'main_page'),
+    'main_page'), 
     }),
     ((u'Додатково'), {
     'classes': ('grp-collapse grp-closed',),
-    'fields': ('slug',),
+    'fields': ('slug', raw_id_fields),
     }),
     )
     def delete_file(self, pk, request):

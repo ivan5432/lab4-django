@@ -5,6 +5,6 @@ class ArticleImageForm(forms.ModelForm):
     image = forms.ImageField(
         widget=forms.ClearableFileInput(attrs={'multiple':
     True}))
-class Meta:
-    model = ArticleImage
-    fields = '__all__'
+    class Meta:
+        model = ArticleImage
+        fields = '__all__'
